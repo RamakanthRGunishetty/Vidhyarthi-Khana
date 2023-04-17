@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0-beta1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+      integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/project1.css" />
+    <link rel="stylesheet" href="./css/recipies.css" />
+    <link rel="shortcut icon" href="images/vidhyarthi-khana-logo-car.png" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vidyarthi khana</title>
+    <script src="js/recipies.js" defer></script>
+    <script src="js/search.js"></script>
+    <script src="js/Buy.js"></script>
+    <script src="js/SignOut.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid  p-0">         
+      <nav class="navbar navbar-dark bg-dark navbar-expand-md p-2 ">
+        <a class="navbar-brand ps-3">
+          <h1>Vidyarthi khana</h1> 
+       
+         </a>
+       <button class="navbar-toggler ms-auto" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+       
+       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+ 
+       
+      <ul class="navbar-nav ms-auto">
+    
+         <li class="nav-item p-3">
+             <a href="#" class="jai"><h5>Home</h5></a>
+            </li>
+                    
+            <li class="nav-item p-3">
+              <a href="#click" class="jai"><h5>About</h5></a>
+            </li>
+            
+            <li class="nav-item p-3 ">
+                 <a href="#Recipies" class="jai"><h5>Menu</h5></a>
+            </li>
+ 
+       <li class="nav-item p-3">
+             <a href="#Contact" class="jai"><h5>Contact us </h5></a>
+        </li>
+ 
+    
+      </ul>
+      <ul class="navbar-nav ms-auto">
+       <li class="nav-item  p-3">
+         <button class="logout_btn" onclick="Out()"><span>Sign-out</span></button>
+   </li>
+     
+      </ul>
+     </div>
+   </div>
+
+    <div class="container-fluid pie stick" id="search">
+      <div class="row">
+        <div class="col-sm-4 mt-4 pb-4 m-auto">
+          <form class="d-flex" role="search" onsubmit="search()">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search here..."
+              aria-label="Search"
+              id="filter" class="filter"
+              autocomplete="off"
+              onkeyup="search()"
+            />
+            <button class="btn btn-dark but text-warning" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 1"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="images/vidhyarthi-khana-logo-car.png" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+           
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="images/C2.png" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Yummy Veg-Biriyani</h5>
+            <p>It's just that you cannot resist</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="images/C3.png" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Pizza</h5>
+            <p>Eating it is always a Maza</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="images/impene.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Yummy-Burger</h5>
+            <p>Have It... Repeat it....</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="images/C4.png" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Coffee </h5>
+            <p>It's Always Refreshing....</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div class="about" id="click">
+      <h3 class="title">About</h3>
+      <p>From sweet cuisines to Crispy Masala Dosa...<br>From Hot Parothas to Cold ice creams...<br>Enjoy the delicacies in the home canteen of BMS - Vidyarthi Khana. Established for providing delicious food and refreshments <br>
+       </p>
+    </div>
+    <div class="Cards" id="Recipies">
+      <div class="container">
+        <h3 class="title">Menu</h3>
+        <div class="products-container" id="product-lists">
+          <div class="product" data-name="p-1" data-id="south">
+            <img src="images/idli (1).jpeg" alt="" />
+            <div class="card-Body">
+              <h3 class="card-title">Idli and Sambhar</h3>
+            </div>
+            <div class="price">₹40</div>
+          </div>
+
+          <div class="product" data-name="p-2">
+            <img src="images/dosa (1).jpg" alt="" data-id="south"/>
+            <div class="card-Body">
+              <h3 class="card-title">Dosa</h3>
+            </div>
+            <div class="price">₹40</div>
+          </div>
+
+          <div class="product" data-name="p-3">
+            <img src="images/meals (1).jpg" alt="" data-id="south"/>
+            <div class="card-Body">
+              <h3 class="card-title">South-Indian Meals</h3>
+            </div>
+            <div class="price">₹70</div>
+          </div>
+
+          <div class="product" data-name="p-4">
+            <img src="images/Parota Kuruma (1).jpg" alt="" data-id="north"/>
+            <div class="card-Body">
+              <h3 class="card-title">Parota Kurma</h3>
+            </div>
+            <div class="price">₹50</div>
+          </div>
+
+          <div class="product" data-name="p-5">
+            <img src="images/pulav (1).jpg" alt="" data-id="south"/>
+            <div class="card-Body"><h3 class="card-title">Pulav</h3></div>
+            <div class="price">₹50</div>
+          </div>
+
+          <div class="product" data-name="p-6">
+            <img src="images/noodles (1).jpg" alt="" data-id="north"/>
+            <div class="card-Body">
+              <h3 class="card-title">Noodles</h3>
+            </div>
+            <div class="price">₹50</div>
+          </div>
+
+          <div class="product" data-name="p-7">
+            <img src="images/pasta (1).jpg" alt="" data-id="chinese"/>
+            <div class="card-Body">
+              <h3 class="card-title">Pasta</h3>
+            </div>
+            <div class="price">₹50</div>
+          </div>
+          <div class="product" data-name="p-8">
+            <img src="images/gobi (1).jpg" alt="" data-id="north"/>
+            <div class="card-Body">
+              <h3 class="card-title"> Gobi</h3>
+            </div>
+            <div class="price">₹40</div>
+          </div>
+
+          <div class="product" data-name="p-9">
+            <img src="images/rolls (1).jpg" alt="" data-id="north"/>
+            <div class="card-Body">
+              <h3 class="card-title">Rolls</h3>
+            </div>
+            <div class="price">₹50</div>
+          </div>
+
+          <div class="product" data-name="p-10">
+            <img src="images/juice (1).jpeg" alt="" data-id="drinks and Ice-creams"/>
+            <div class="card-Body">
+              <h3 class="card-title">Juices</h3>
+            </div>
+            <div class="price">₹20</div>
+          </div>
+
+          <div class="product" data-name="p-11">
+            <img src="images/ice (1).jpg" alt="" data-id="drinks and Ice-creams"/>
+            <div class="card-Body">
+              <h3 class="card-title">Ice-creams</h3>
+            </div>
+            <div class="price">₹20</div>
+          </div>
+
+          <div class="product" data-name="p-12">
+            <img src="images/poori (1).jpg" alt="" data-id="north"/>
+            <div class="card-Body">
+              <h3 class="card-title">Poori</h3>
+            </div>
+            <div class="price">₹50</div>
+          </div>
+
+        </div>
+      </div>
+
+      <div>
+         <a class="scroll" href="#"><i class="fa-solid fa-arrow-up"></i></a>
+      </div>
+
+      <div class="products-preview">
+        <div class="preview" data-target="p-1">
+          <i class="fas fa-times"></i>
+          <img src="images/idli (1).jpeg" alt="" />
+          <h3>Idli and Sambhar</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 250 )</span>
+          </div>
+          <p>
+            Idli and Sambar ,This beloved combination is ideal in terms of
+            taste, health, and other factors.
+          </p>
+          <div class="price">₹40</div>
+          <div class="buttons">
+            <button type="button" class="success_button" onclick="Buy('Idli and Sambhar' , '₹40')">Buy now</button>
+          </div>
+        </div>
+
+        <div class="preview" data-target="p-2">
+          <i class="fas fa-times"></i>
+          <img src="images/dosa (1).jpg" alt="" />
+          <h3>Dosa</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <i class="fas fa-star"></i>
+            <span>( 250 )</span>
+          </div>
+          <p>
+            A dosa, also called dosai, dosey, or dosha is a thin pancake in
+            South Indian cuisine made from a fermented batter of ground black
+            lentils and rice
+          </p>
+          <div class="price">₹40</div>
+          <div class="buttons">
+            <button type="button" class="success_button" onclick="Buy('Dosa' , '₹40')">Buy now</button>
+          </div>
+        </div>
+
+        <div class="preview" data-target="p-3">
+          <i class="fas fa-times"></i>
+          <img src="images/meals (1).jpg" alt="" />
+          <h3>South-Indian Meals</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 250 )</span>
+          </div>
+          <p>
+            India is known for its spicy, mouth watering and tangy dishes, South
+            Indian meals ensure that there is a balance.
+          </p>
+          <div class="price">₹70</div>
+          <div class="buttons">
+            <button type="button" class="success_button" onclick="Buy('South-Indian Meals' , '₹70')">Buy now</button>
+          </div>
+        </div>
+
+        <div class="preview" data-target="p-4">
+          <i class="fas fa-times"></i>
+          <img src="images/Parota Kuruma (1).jpg" alt="" />
+          <h3>Parota Kuruma</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 250 )</span>
+          </div>
+          <p>
+            Porotta is a layered Indian and Sri Lankan flatbread made from Maida
+            or Atta, alternatively known as flaky ribbon pancake.
+          </p>
+          <div class="price">₹50</div>
+          <div class="buttons">
+            <button type="button" class="success_button" onclick="Buy('Parota Kurma','₹50')">Buy now</button>
+          </div>
+        </div>
+
+        <div class="preview" data-target="p-5">
+          <i class="fas fa-times"></i>
+          <img src="images/pulav (1).jpg" alt="" />
+          <h3 class="item">pulav</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 250 )</span>
+          </div>
+          <p>
+            Pulav is hot spicy Eastern dish of rice and vegetables.
+          </p>
+          <div class="price">₹50</div>
+          <div class="buttons">
+            <button type="button" class="success_button" onclick="Buy('pulav','₹50')">Buy now</button>
+          </div>
+        </div>
+
+        <div class="preview" data-target="p-6">
+          <i class="fas fa-times"></i>
+          <img src="images/noodles (1).jpg" alt="" />
+          <h3>Noodles</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 250 )</span>
+          </div>
+          <p>
+            Noodles are typically made from unleavened wheat dough and are
+            stretched, extruded, or rolled, and then cut into varying shapes.
+          </p>
+          <div class="price">₹50</div>
+          <div class="buttons">
+            <button type="button" class="success_button" onclick="Buy('Noodles','₹50')">Buy now</button>
+          </div>
+        </div>
+
+        <div class="preview" data-target="p-7">
+          <i class="fas fa-times"></i>
+          <img src="images/pasta (1).jpg" alt="" />
+          <h3>Pasta</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 250 )</span>
+          </div>
+          <p>
+            Pasta is a type of food made from a mixture of flour, eggs, and
+            water that is formed into different shapes and then boiled.
+          </p>
+          <div class="price">₹50</div>
+          <div class="buttons">
+            <button type="button" class="success_button" onclick="Buy('Pasta','₹50')">Buy now</button>
+          </div>
+        </div>
+
+        <div class="preview" data-target="p-8">
+          <i class="fas fa-times"></i>
+          <img src="images/gobi (1).jpg" alt="" />
+          <h3  class="item">gobi</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 250 )</span>
+          </div>
+          <p>
+            Gobi Manchurian is a popular Indo Chinese appetizer made with cauliflower, corn flour, soya sauce.
+          </p>
+          <div class="price">₹40</div>
+          <div class="buttons">
+            <button type="button" class="btn btn-success button" onclick="Buy('gobi','₹40')">Buy now</button>
+          </div>
+        </div>
+
+        <div class="preview" data-target="p-9">
+          <i class="fas fa-times"></i>
+          <img src="images/rolls (1).jpg" alt="" />
+          <h3>rolls</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 250 )</span>
+          </div>
+          <p>
+            A roll is a small, usually round or oblong individual loaf of bread served as a meal accompaniment (eaten plain or with butter)
+          </p>
+          <div class="price">₹50</div>
+          <div class="buttons">
+            <button type="button" class="success_button" onclick="Buy('Rolls','₹50')">Buy now</button>
+          </div>
+        </div>
+
+        <div class="preview" data-target="p-10">
+          <i class="fas fa-times"></i>
+          <img src="images/juice (1).jpeg" alt="" />
+          <h3>juices</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 250 )</span>
+          </div>
+          <p>
+            Juice is a drink made from the extraction or pressing of the natural liquid contained in fruit and vegetables. 
+          </p>
+          <div class="price">₹20</div>
+          <div class="buttons">
+            <button type="button" class="success_button" onclick="Buy('juices','₹20')">Buy now</button>
+          </div>
+        </div>
+
+        <div class="preview" data-target="p-11">
+          <i class="fas fa-times"></i>
+          <img src="images/ice (1).jpg" alt="" />
+          <h3>Ice-creams</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 250 )</span>
+          </div>
+          <p>
+            Ice cream is a sweetened frozen food typically eaten as a snack or dessert. 
+          </p>
+          <div class="price">₹20</div>
+          <div class="buttons">class="success_button" onclick="Buy('Ice-creams','₹20')">Buy now</but>
+          </div>
+        </div>
+
+        <div class="preview" data-target="p-12">
+          <i class="fas fa-times"></i>
+          <img src="images/poori (1).jpg" alt="" />
+          <h3>Poori</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 250 )</span>
+          </div>
+          <p>
+            Puri is a deep-fried bread made from unleavened whole-wheat flour that originated in the North-India.
+          </p>
+          <div class="price">₹50</div>
+          <div class="buttons">
+            <button type="button" class="success_button" onclick="Buy('Poori','₹50')">Buy now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <title>Responsive Footer</title>
+    <link
+      rel="stylesheet"
+      href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+    />
+
+    <link
+      href="http://fonts.googleapis.com/css?family=Cookie"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <footer class="footer-distributed" id="Contact">
+      <div class="footer-left">
+        <h3><span>Vidyarthi Khana</span></h3>
+
+        <p class="footer-links">
+          <a href="#">Home</a>
+          |
+          <a href="#click">About</a>
+          |
+          <a href="#Recipies">Menu</a>
+          |
+          <a href="#Contact">Contact</a>
+        </p>
+
+        <p class="footer-company-name">© 2022 T Pvt. Ltd.</p>
+      </div>
+
+      <div class="footer-center">
+        <div>
+          <i class="fa fa-map-marker"></i>
+          <p>
+            <span>B.M.S College of Engineering</span>
+            Basavangudi, Bengaluru - 560019
+          </p>
+        </div>
+
+        <div>
+          <i class="fa fa-phone"></i>
+          <p>+91 7996457543</p>
+        </div>
+        <div>
+          <i class="fa fa-envelope"></i>
+          <p>
+            <a href="mailto:pratik.is21@bmsce.ac.in">WWW.BMSCE.AC.IN</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer-right">
+        <p class="footer-company-about">
+          <span>About the company</span>
+          Vidhyarthi Khana is the canteen in BMSCE .
+          <br />
+        </p>
+
+        <div class="footer-icons">
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-youtube"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.min.js"></script>
+  </body>
+</html>
+

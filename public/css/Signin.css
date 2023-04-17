@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 450px;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 75px;
+}
+
+.login {
+  width: 100vw;
+
+  border-radius: 5px;
+}
+
+.title {
+  color: white;
+  text-transform: uppercase;
+  line-height: 35px;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 2px;
+  font-size: 2.5rem;
+
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+}
+
+.welcome-message {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 28px;
+  margin-bottom: 30px;
+  color: white;
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  letter-spacing: 3.5px;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: rgb(100, 112, 177);
+  background: linear-gradient(
+    90deg,
+    rgba(100, 112, 177, 1) 23%,
+    rgba(162, 31, 109, 1) 29%
+  );
+}
+
+.login form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  background-color: #fffbeb;
+  border-radius: 2px;
+}
+
+.login form .text-field {
+  width: 25vw;
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.login .para {
+  line-height: 80px;
+  color: black;
+  font-family: Cambria, Cochin, zinGeorgia, Times, 'Times New Roman', serif;
+  border-style: inherit;
+  border-color: black;
+  border-radius: 5px 5px 0 0;
+  background-color: #f1ebbb;
+  font-size: 25px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.login form .text-field input {
+  width: 100%;
+  letter-spacing: 0.5px;
+  padding: 14px 64px;
+  border-radius: 15px;
+  color: rgb(1, 1, 1);
+  background-color: white;
+  margin-bottom: 5px;
+}
+
+.login form .text-field i {
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgb(0, 0, 0);
+}
+
+.login form .button input {
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  font-size: 1.1em;
+
+  padding: 14px 64px;
+  margin: 32px auto;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  background-color: #6a0572;
+}
+
+.side img {
+  height: 100vh;
+  width: 30vw;
+  padding: 0px;
+  /* animation: SIDE 1s ease-in-out 1; */
+}
+
+/* @keyframes SIDE {
+  from {
+    margin-left: 0;
+  }
+
+  to {
+    margin-left: 100px;
+  }
+} */
+
+.login form .pass a {
+  color: rgb(0, 0, 0);
+}
+
+.login form .forgot a {
+  text-decoration: none;
+  text-align: center;
+}
+
+.login form .forgot {
+  text-align: center;
+  font-weight: 500;
+  line-height: 5px;
+}
+
+.login form .forgot a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    display: block;
+  }
+
+  .container {
+    margin-left: 0;
+    display: grid;
+    place-items: center;
+  }
+
+  .side img {
+    width: 100vw;
+  }
+
+  .login form {
+    width: 80%;
+    margin: 0 auto;
+    padding: 25px;
+  }
+
+  .login {
+    padding-left: 200px;
+  }
+
+  .login .para {
+    text-align: center;
+    width: 80.5%;
+    margin-left: 51px;
+    border-radius: 0;
+  }
+
+  .login form {
+    border-radius: 0%;
+  }
+
+  .login form .text-field {
+    width: 100%;
+  }
+
+  .login form .text-field input {
+    width: 100%;
+    padding-right: 5px;
+    margin-bottom: 20px;
+  }
+
+  .login form .button input {
+    padding: 12px;
+    margin: 20px auto;
+  }
+
+  .login form .text-field i {
+    position: absolute;
+    left: 18px;
+    top: 40%;
+    transform: translateY(-50%);
+    color: rgb(0, 0, 0);
+  }
+}

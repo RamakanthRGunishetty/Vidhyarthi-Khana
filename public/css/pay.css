@@ -1,0 +1,226 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(https://i1.wp.com/fusionfinancialmanagement.com/wp-content/uploads/2020/02/AdobeStock_311673638.jpeg?ssl=1);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes MOVE {
+  from {
+    opacity: 0;
+    margin-top: 40px;
+  }
+
+  to {
+    opacity: 1;
+    margin-top: 100px;
+  }
+}
+
+.wrapper {
+  animation: MOVE 0.5s ease-in 1;
+  background-color: #000000b6;
+  width: 500px;
+  padding: 25px;
+  margin: 100px 300px 0;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.wrapper h2 {
+  background-color: #000000;
+  color: #d3a921;
+  font-size: 24px;
+  padding: 10px;
+  margin-bottom: 8px;
+  text-align: center;
+  border: 1px dashed #d3a921;
+}
+
+.wrapper h4 {
+  padding-bottom: 5px;
+  color: #d3a921;
+}
+
+.input_group {
+  margin-bottom: 8px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  padding: 5px 0;
+}
+
+.input_box {
+  width: 100%;
+  margin-right: 12px;
+  position: relative;
+}
+
+.input_box:last-child {
+  margin-right: 0;
+}
+
+.input_box .name {
+  padding: 14px 10px 14px 50px;
+  width: 100%;
+  background-color: #100d0d;
+  border: 1px solid #0003;
+  outline: none;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  border-radius: 3px;
+  color: #d3a921;
+}
+
+.input_box .name:focus,
+.dob:focus {
+  -webkit-box-shadow: 0 0 2px 1px #d3a921;
+  -moz-box-shadow: 0 0 2px 1px rgb(34, 173, 34);
+  box-shadow: 0 0 2px 1px rgb(35, 169, 35);
+  border: 1px solid rgb(9, 195, 9);
+}
+
+.input_box .icon {
+  width: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  color: rgb(33, 195, 33);
+  background-color: #000000;
+  border-radius: 2px 0 0 2px;
+  transition: 0.3s;
+  font-size: 20px;
+  pointer-events: none;
+  border: 1px solid #00000003;
+  border-right: none;
+}
+
+.name:focus + .icon {
+  background-color: #44d321;
+  color: #fff;
+  border-right: 1px solid rgb(21, 174, 21);
+  border: none;
+  transition: 1s;
+}
+
+.dob {
+  width: 30%;
+  padding: 14px;
+  text-align: center;
+  background-color: #fcfcfc;
+  transition: 0.3s;
+  outline: none;
+  border: 1px solid #c0bfbf;
+  border-radius: 3px;
+}
+
+.radio {
+  display: none;
+}
+
+.input_box label {
+  width: 50%;
+  padding: 13px;
+  background-color: #fcfcfc;
+  display: inline-block;
+  text-align: center;
+  border: 1px solid #c0bfbf;
+}
+
+.input_box label:first-of-type {
+  border-top-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-right: none;
+}
+
+.input_box label:last-of-type {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.radio:checked + label {
+  background-color: #d3a921;
+  color: #fff;
+  transition: 0.5s;
+}
+
+.input_box button {
+  width: 100%;
+  background-color: rgb(23, 113, 23);
+  border: none;
+  color: #fff;
+  padding: 15px;
+  border-right: 4px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.input_box button:hover {
+  cursor: pointer;
+  background-color: #b3901d;
+}
+
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    width: 90%;
+    margin: 50px auto 0;
+    padding: 15px;
+  }
+
+  .input_group {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .input_box {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .input_box .name {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .dob {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+
+  .input_box label {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .input_box button {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .wrapper h2 {
+    font-size: 20px;
+    padding: 8px;
+    margin-bottom: 5px;
+  }
+
+  .wrapper h4 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+}

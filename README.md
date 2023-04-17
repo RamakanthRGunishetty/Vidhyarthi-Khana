@@ -13,7 +13,7 @@ Our website also includes a secure and user-friendly payment system that allows 
 
 ![image](https://user-images.githubusercontent.com/93769233/232397709-28fc3315-c8e8-45bf-ac69-ea6bc31b364f.png)
 
-To ensure smooth order management , we have integrated a MongoDB database into our website. This database stores all the relevant information related to food orders, including order details, customer information, and payment details. This allows us to efficiently manage and track orders, process payments, and maintain customer records in a secure and organized manner.
+To ensure smooth order management , we have integrated a ***MongoDB*** database into our website. This database stores all the relevant information related to food orders, including order details, customer information, and payment details. This allows us to efficiently manage and track orders, process payments, and maintain customer records in a secure and organized manner.
 
 # Vidhyarthi-Khana Logo
 ![vidyarthi-khana-logo (1)](https://user-images.githubusercontent.com/93769233/232397939-333718f8-9b7c-4eb8-8f58-66871f7bef7c.png)

@@ -1,10 +1,11 @@
-var express = require('express')
-var bodyParser = require('body-parser')
-var mongoose = require('mongoose')
+const express = require('express')
+const bodyParser = require('body-parser')
+const mongoose = require('mongoose')
 require('dotenv').config()
-const port = process.env.PORT || 3000
 
 const app = express()
+const port = process.env.PORT || 3000
+
 app.use(bodyParser.json())
 app.use(express.static('public'))
 app.use(
@@ -18,16 +19,16 @@ mongoose.connect(process.env.MONGODB_URI, {
   useUnifiedTopology: true,
 })
 
-var db = mongoose.connection
+const db = mongoose.connection
 
 db.on('error', () => console.log('Error in Connecting to Database'))
 db.once('open', () => console.log('Connected to Database'))
 
 app.post('/Sign_up', (req, res) => {
-  var email = req.body.email
-  var password = req.body.password
+  const email = req.body.email
+  const password = req.body.password
 
-  var data = {
+  const data = {
     email: email,
     password: password,
   }
@@ -42,11 +43,11 @@ app.post('/Sign_up', (req, res) => {
 })
 
 app.post('/payments', (req, res) => {
-  var user = req.body.name
-  var item = req.body.item
-  var price = req.body.price
+  const user = req.body.name
+  const item = req.body.item
+  const price = req.body.price
 
-  var payment = {
+  const payment = {
     user: user,
     item: item,
     price: price,
@@ -60,13 +61,13 @@ app.post('/payments', (req, res) => {
   })
 })
 
-app
-  .get('/', (req, res) => {
-    res.set({
-      'Allow-auth': '*',
-    })
-    return res.redirect('Sign_up.html')
+app.get('/', (req, res) => {
+  res.set({
+    'Allow-auth': '*',
   })
-  .listen(port, '0.0.0.0')
+  return res.redirect('Sign_up.html')
+})
 
-console.log('Listening on PORT 3002')
+app.listen(port, () => {
+  console.log(`Listening on PORT ${port}`)
+})

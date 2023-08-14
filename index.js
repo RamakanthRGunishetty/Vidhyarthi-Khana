@@ -65,7 +65,7 @@ app.get('/', (req, res) => {
   res.set({
     'Allow-auth': '*',
   })
-  return res.redirect('project1.html')
+  return res.redirect('Sign_up.html')
 })
 
 app.listen(port, () => {

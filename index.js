@@ -2,6 +2,7 @@ var express = require('express')
 var bodyParser = require('body-parser')
 var mongoose = require('mongoose')
 require('dotenv').config()
+const port = process.env.PORT || 3000
 
 const app = express()
 app.use(bodyParser.json())
@@ -66,6 +67,6 @@ app
     })
     return res.redirect('Sign_up.html')
   })
-  .listen(3002)
+  .listen(port, '0.0.0.0')
 
 console.log('Listening on PORT 3002')

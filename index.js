@@ -1,6 +1,7 @@
 var express = require('express')
 var bodyParser = require('body-parser')
 var mongoose = require('mongoose')
+require('dotenv').config()
 
 const app = express()
 app.use(bodyParser.json())
@@ -11,16 +12,10 @@ app.use(
   }),
 )
 
-// mongodb+srv://ramakanth:rs2003%40MONGO@cluster0.yhsky5i.mongodb.net/Vidhyarthi_Khana
-// mongodb://localhost:27017/Vidhyarthi_Khana
-
-mongoose.connect(
-  'mongodb+srv://ramakanth:rs2003%40MONGO@cluster0.yhsky5i.mongodb.net/Vidhyarthi_Khana',
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  },
-)
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
 
 var db = mongoose.connection
 

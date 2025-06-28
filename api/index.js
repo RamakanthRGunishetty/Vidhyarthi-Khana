@@ -7,19 +7,24 @@ require('dotenv').config();
 
 const app = express();
 
+// Parse body
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, '../public')));
 
+// Serve static files from /public
+app.use('/public', express.static(path.join(__dirname, '../public')));
+
+// MongoDB connection
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
 
 const db = mongoose.connection;
-db.on('error', () => console.log('Error in DB connection'));
-db.once('open', () => console.log('DB Connected'));
+db.on('error', () => console.log('❌ Error connecting to DB'));
+db.once('open', () => console.log('✅ Connected to DB'));
 
+// API Routes
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/Sign_up.html'));
 });
@@ -27,18 +32,19 @@ app.get('/', (req, res) => {
 app.post('/Sign_up', (req, res) => {
   const { email, password } = req.body;
   db.collection('users').insertOne({ email, password }, (err) => {
-    if (err) return res.status(500).send('Error saving user');
-    res.redirect('/project1.html');
+    if (err) return res.status(500).send('❌ Error saving user');
+    res.redirect('/public/project1.html');
   });
 });
 
 app.post('/payments', (req, res) => {
   const { name, item, price } = req.body;
   db.collection('payments').insertOne({ user: name, item, price }, (err) => {
-    if (err) return res.status(500).send('Payment error');
-    res.send('OK');
+    if (err) return res.status(500).send('❌ Payment error');
+    res.send('✅ Payment saved');
   });
 });
 
-// EXPORT as serverless function
-module.exports = serverless(app);
+// Export for serverless
+module.exports = app;
+module.exports.handler = serverless(app);

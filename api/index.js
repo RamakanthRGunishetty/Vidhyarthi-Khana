@@ -20,7 +20,7 @@ const db = mongoose.connection;
 db.on('error', () => console.log('Error in DB connection'));
 db.once('open', () => console.log('DB Connected'));
 
-app.get('/', (req, res) => {
+app.get('./', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/Sign_up.html'));
 });
 

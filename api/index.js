@@ -7,44 +7,46 @@ require('dotenv').config();
 
 const app = express();
 
-// Parse body
+// Parse JSON and URL-encoded bodies
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve static files from /public
-app.use('/public', express.static(path.join(__dirname, '../public')));
+// Serve everything in /docs at the site root
+app.use(express.static(path.join(__dirname, '../docs')));
 
-// MongoDB connection
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
+// Explicit root route (optional, since static will already serve index.html)
+app.get('/', (_req, res) => {
+  res.sendFile(path.join(__dirname, '../docs/index.html'));
 });
 
-const db = mongoose.connection;
-db.on('error', () => console.log('❌ Error connecting to DB'));
-db.once('open', () => console.log('✅ Connected to DB'));
-
-// API Routes
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/Sign_up.html'));
-});
-
+// Handle signup form
 app.post('/Sign_up', (req, res) => {
   const { email, password } = req.body;
-  db.collection('users').insertOne({ email, password }, (err) => {
+  mongoose.connection.collection('users').insertOne({ email, password }, (err) => {
     if (err) return res.status(500).send('❌ Error saving user');
-    res.redirect('/public/project1.html');
+    // After signup, send them to project1.html
+    res.redirect('/project1.html');
   });
 });
 
+// Handle payment form
 app.post('/payments', (req, res) => {
   const { name, item, price } = req.body;
-  db.collection('payments').insertOne({ user: name, item, price }, (err) => {
+  mongoose.connection.collection('payments').insertOne({ user: name, item, price }, (err) => {
     if (err) return res.status(500).send('❌ Payment error');
     res.send('✅ Payment saved');
   });
 });
 
-// Export for serverless
+// MongoDB connection setup
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+const db = mongoose.connection;
+db.on('error', () => console.log('❌ Error connecting to DB'));
+db.once('open', () => console.log('✅ Connected to DB'));
+
+// Export for serverless environments
 module.exports = app;
 module.exports.handler = serverless(app);

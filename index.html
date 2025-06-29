@@ -2,32 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sign-Up</title>
-  <link rel="stylesheet" href="/css/Signin.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/Signin.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js"></script>
 </head>
 <body>
   <div class="side">
-    <img src="/images/vidyarthi-khana-bg.png" alt="Canteen" />
+    <img src="/images/vidyarthi-khana-bg.png" alt="Canteen"/>
   </div>
   <div class="container">
     <div class="login">
       <p class="title">Welcome to Vidyarthi Khana</p>
-      <div class="separator"></div>
       <p class="welcome-message">Please, provide your sign-up credentials</p>
       <form action="/api/Sign_up" method="POST">
         <div class="text-field">
           <i class="fas fa-user"></i>
-          <input type="email" name="email" placeholder="Email" required />
+          <input type="email" name="email" placeholder="Email" required/>
         </div>
         <div class="text-field">
           <i class="fas fa-lock"></i>
-          <input type="password" name="password" placeholder="Password" required />
+          <input type="password" name="password" placeholder="Password" required/>
         </div>
         <div class="text-field button">
-          <input type="submit" value="Sign Up" />
+          <input type="submit" value="Sign Up"/>
         </div>
       </form>
     </div>

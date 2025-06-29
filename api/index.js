@@ -9,39 +9,39 @@ require('dotenv').config();
 
 const app = express();
 
-// 1) Body parsing
+// 1. Parse JSON and form bodies
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 
-// 2) Serve everything in /docs at the site root
-app.use(express.static(path.join(__dirname, '../docs')));
+// 2. Serve static from /public at the root
+//    → GET  /           → public/index.html
+//    → GET  /css/...    → public/css/...
+//    → GET  /project1.html, /payment.html, etc.
+app.use(express.static(path.join(__dirname, '../public')));
 
-// 3) (Optional) Explicit root route to docs/index.html
-app.get('/', (_req, res) => {
-  res.sendFile(path.join(__dirname, '../docs/index.html'));
-});
+// 3. Connect to MongoDB
+mongoose
+  .connect(process.env.MONGODB_URI, {
+    useNewUrlParser:    true,
+    useUnifiedTopology: true,
+  })
+  .catch(err => console.error('❌ Mongo connect error:', err));
 
-// 4) MongoDB connection
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser:    true,
-  useUnifiedTopology: true,
-});
 const db = mongoose.connection;
-db.on('error', () => console.log('❌ Error connecting to DB'));
-db.once('open', () => console.log('✅ Connected to DB'));
+db.once('open', () => console.log('✅ MongoDB connected'));
 
-// 5) Handle signup form
-app.post('/Sign_up', (req, res) => {
+// 4. POST /api/Sign_up
+app.post('/api/Sign_up', (req, res) => {
   const { email, password } = req.body;
   db.collection('users').insertOne({ email, password }, err => {
     if (err) return res.status(500).send('❌ Error saving user');
-    // redirect to /project1.html (served from docs/)
+    // after signup, redirect client to project1.html
     res.redirect('/project1.html');
   });
 });
 
-// 6) Handle payment form
-app.post('/payments', (req, res) => {
+// 5. POST /api/payments
+app.post('/api/payments', (req, res) => {
   const { name, item, price } = req.body;
   db.collection('payments').insertOne({ user: name, item, price }, err => {
     if (err) return res.status(500).send('❌ Payment error');
@@ -49,6 +49,6 @@ app.post('/payments', (req, res) => {
   });
 });
 
-// 7) Export for serverless
-module.exports        = app;
+// 6. Export for Vercel (serverless)
+module.exports = app;
 module.exports.handler = serverless(app);

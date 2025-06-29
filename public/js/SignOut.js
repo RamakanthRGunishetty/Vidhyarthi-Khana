@@ -7,7 +7,7 @@ function Out() {
     dangerMode: true,
   }).then((willDelete) => {
     if (willDelete) {
-      window.location.href = 'Sign_up.html'
+      window.location.href = 'index.html'
     } else {
     }
   })

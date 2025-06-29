@@ -7,7 +7,7 @@ function Pay(event) {
   const Name = document.getElementById('user').value
   console.log(Name)
 
-  fetch('/payments', {
+  fetch('/api/payments', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
